@@ -26,8 +26,8 @@ let students = [
     }
 ];
 
-function myList(array, mingpa = 2) {
-    let myArray = array.filter(x => x.gpa > mingpa).map((x) => x.gpa);
+// function myList(array, mingpa = 2) {
+//     let myArray = array.filter(x => x.gpa > mingpa).map((x) => x.gpa);
     //    for (let x of array) {
     //        if (x.gpa >= mingpa) {
     //            myArray.push(x.gpa);
@@ -35,14 +35,26 @@ function myList(array, mingpa = 2) {
     //
     //    }
 
+//     let sum = 0;
+//     for (var i = 0; i < myArray.length; i++) {
+//         sum += myArray[i];
+
+//     }
+//     let avg = sum / (myArray.length > 0 ? myArray.length : 1);
+
+//     return avg;
+// }
+
+// console.log(myList(students, 1));
+
+function myList(list,mingpa = 2){
     let sum = 0;
-    for (var i = 0; i < myArray.length; i++) {
-        sum += myArray[i];
+    let myArray = list.filter((x) => x.gpa > mingpa).map((y) => y.gpa);
+    myArray.map((h) => sum+=h);
+    let avg = sum / myArray.length
 
-    }
-    let avg = sum / (myArray.length > 0 ? myArray.length : 1);
-
-    return avg;
+    return avg
 }
 
 console.log(myList(students, 1));
+
